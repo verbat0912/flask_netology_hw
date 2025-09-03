@@ -12,7 +12,7 @@ next_id = 1
 def create_ad():
     global next_id
     ad = request.json
-    if ad['title'] != '' and ad['description'] != '' and ad['owner']:
+    if ad['title'] and ad['description'] and ad['owner'] != '':
         ad['id'] = next_id
         ad['created_at'] = datetime.now().strftime("%y-%m-%d")
         ads.append(ad)
